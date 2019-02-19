@@ -14,27 +14,6 @@
  * *
  */
 
-
-if (!function_exists('checkIsBot')):
-
-    function checkIsBot()
-    {
-        global $wpdb;
-        $bots = wp_cache_get('botlist');
-        if ($bots === false) {
-            $botsAll = require ('bot-name.data.php');
-            $botNames = array();
-            foreach ($botsAll AS $item) {
-                $botNames[] = $item['name'];
-            }
-            $bots = implode('|', $botNames);
-            wp_cache_add('botlist', $bots);
-        }
-        return preg_match('/^.*' . addslashes($bots) . '.*$/i', $_SERVER['HTTP_USER_AGENT']);
-    }
-
-endif;
-
 if (!function_exists('eregi')) :
 
     function eregi(string $pattern, string $string, array &$regs)
