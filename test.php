@@ -14,7 +14,8 @@
  */
 
 if (!function_exists('eregi')) :
-
+/** переопределенеи функции php для php>5.0
+*/
     function eregi(string $pattern, string $string, array &$regs)
     {
         if (empty($pattern))
