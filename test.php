@@ -5,13 +5,12 @@
  * @version 1.1
  */
 /*
-  Plugin Name: vw-function
-  Plugin URI: http://wordpress.org/
-  Description: расширение которое содержит все нужные функции из старой версии вордпресса
-  Author: Viktor Serobaba
-  Version: 1.1
-  Author URI: http://vikweb.net/
- * *
+  * Plugin Name: vw-function
+  * Plugin URI: http://wordpress.org/
+  * Description: расширение которое содержит все нужные функции из старой версии вордпресса
+  * Author: Viktor Serobaba
+  * Version: 1.1
+  * Author URI: http://vikweb.net/
  */
 
 if (!function_exists('eregi')) :
