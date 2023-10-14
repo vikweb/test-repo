@@ -5,38 +5,17 @@
  * @version 1.1
  */
 /*
-  Plugin Name: vw-function
-  Plugin URI: http://wordpress.org/
-  Description: расширение которое содержит все нужные функции из старой версии вордпресса
-  Author: Viktor Serobaba
-  Version: 1.1
-  Author URI: http://vikweb.net/
- * *
+  * Plugin Name: vw-function
+  * Plugin URI: http://wordpress.org/
+  * Description: расширение которое содержит все нужные функции из старой версии вордпресса
+  * Author: Viktor Serobaba
+  * Version: 1.1
+  * Author URI: http://vikweb.net/
  */
 
-
-if (!function_exists('checkIsBot')):
-
-    function checkIsBot()
-    {
-        global $wpdb;
-        $bots = wp_cache_get('botlist');
-        if ($bots === false) {
-            $botsAll = require ('bot-name.data.php');
-            $botNames = array();
-            foreach ($botsAll AS $item) {
-                $botNames[] = $item['name'];
-            }
-            $bots = implode('|', $botNames);
-            wp_cache_add('botlist', $bots);
-        }
-        return preg_match('/^.*' . addslashes($bots) . '.*$/i', $_SERVER['HTTP_USER_AGENT']);
-    }
-
-endif;
-
 if (!function_exists('eregi')) :
-
+/** переопределенеи функции php для php>5.0
+*/
     function eregi(string $pattern, string $string, array &$regs)
     {
         if (empty($pattern))
